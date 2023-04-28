@@ -111,42 +111,17 @@ export default function Home() {
         }
     }
 
-    async function handleSubmit() {
-        const data = {
-            name,
-            email,
-            phone,
-        }
-        const response = await fetch("http://localhost:3000/api/submit", {
-            method: "post",
-            body: JSON.stringify(data),
-            headers: { "Content-Type": "application/json" },
-        })
-            .then((res) => res.json())
-            .catch((err) => console.log(err))
-        console.log(response)
-        if (response.response === "Successful") {
-            setOpenSubmit(false)
-            setFeedback(
-                (prev) =>
-                    (prev = {
-                        show: true,
-                        text: "Successfully submitted application",
-                        reload: true,
-                        error: false,
-                    })
-            )
-        } else {
-            setOpenSubmit(false)
-            setFeedback(
-                (prev) =>
-                    (prev = {
-                        show: true,
-                        text: "Server error",
-                        error: true,
-                    })
-            )
-        }
+    function handleSubmit() {
+        setOpenSubmit(false)
+        setFeedback(
+            (prev) =>
+                (prev = {
+                    show: true,
+                    text: "Successfully submitted application",
+                    reload: true,
+                    error: false,
+                })
+        )
     }
 
     function FeedBack() {
