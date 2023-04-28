@@ -1,0 +1,210 @@
+@import "./mixins";
+@import "./variables";
+
+.Home {
+    background-color: rgb(238, 238, 238);
+    width: 100dvw;
+    height: 100dvh;
+    color: black;
+    overflow-y: hidden;
+
+    .feedback {
+        position: fixed;
+        width: 100dvw;
+        height: 100dvh;
+        background-color: rgba(0, 0, 0, 0.4);
+        @include alignJustifyCenter;
+        z-index: 5;
+
+        .feedbackContent {
+            border-radius: 10px;
+            height: 40%;
+            width: 40%;
+            background-color: white;
+            padding: 2rem;
+            @include flex-direction(column);
+            z-index: 10;
+
+            .content {
+                flex-grow: 1;
+                @include justifyContent(space-between);
+                align-items: center;
+                flex-direction: column;
+
+                & h3 {
+                    text-align: center;
+                    margin-top: 10%;
+                }
+                & button {
+                    width: 30%;
+                    border: none;
+                    background-color: $defaultBlueColor;
+                    color: white;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    padding: 0.7rem 0;
+                    cursor: pointer;
+                    transition: $backgroundColorTransition;
+                    &:hover {
+                        background-color: $defaultBlueHoverColor;
+                    }
+                }
+            }
+        }
+        .submitContent {
+            border-radius: 10px;
+            height: 90%;
+            width: 85%;
+            background-color: white;
+            padding: 3rem;
+            @include flex-direction(column);
+            justify-content: space-between;
+
+            & h2 {
+                text-align: center;
+            }
+            .allInfo {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 4rem;
+                max-height: 80%;
+                overflow-y: auto;
+
+                .info {
+                    @include flex-direction(column);
+                    gap: 7px 0;
+                    flex-basis: 20%;
+
+                    & label {
+                        font-weight: 600;
+                        text-decoration: underline;
+                    }
+                    & p {
+                        color: $defaultBlueColor;
+                    }
+                }
+            }
+            .actionCont {
+                @include justifyContent(space-between);
+
+                & button {
+                    width: 10%;
+                    border: none;
+                    background-color: $defaultBlueColor;
+                    color: white;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    padding: 0.7rem 0;
+                    cursor: pointer;
+                    transition: $backgroundColorTransition;
+                    &:hover {
+                        background-color: $defaultBlueHoverColor;
+                    }
+                }
+            }
+        }
+    }
+    .homeContainer {
+        height: 100%;
+        @include justifyContent(space-between);
+
+        .bgSection {
+            width: 55%;
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .mainContent {
+            width: 45%;
+            @include alignJustifyCenter;
+            overflow-x: hidden;
+
+            .contentContainer {
+                width: 80%;
+                height: 75%;
+                @include justifyContent(space-between);
+                flex-direction: column;
+
+                .head {
+                    padding-bottom: 0.5rem;
+
+                    & h2 {
+                        text-align: center;
+                        text-decoration: underline;
+                        font-size: 1.45rem;
+                    }
+                    & h3 {
+                        text-align: center;
+                        margin-top: 1rem;
+                    }
+                }
+                .allInputs {
+                    @include justifyContent(space-between);
+                    align-items: flex-end;
+                    flex-wrap: wrap;
+                    gap: 40px 0;
+                    max-height: 70%;
+                    overflow-y: auto;
+
+                    .inputCont {
+                        @include flex-direction(column);
+                        gap: 3px 0;
+                        flex-basis: 45%;
+
+                        & label {
+                            margin-left: 5px;
+                            & span {
+                                color: crimson;
+                            }
+                        }
+                        & span {
+                            color: crimson;
+                            font-size: 0.7rem;
+                            margin-left: 5px;
+                        }
+                        & input {
+                            height: 2.2rem;
+                            border: 2px solid #0000ff;
+                            padding: 0 6px;
+                            width: 100%;
+                        }
+                        & select {
+                            height: 2.2rem;
+                            border: 2px solid #0000ff;
+                            padding: 0 6px;
+                            width: 100%;
+                        }
+                    }
+                }
+                .actions {
+                    @include justifyContent(space-between);
+                    padding-top: 0.5rem;
+
+                    .actionCont {
+                        width: 50%;
+                        & button {
+                            background-color: $defaultBlueColor;
+                            color: white;
+                            font-size: 0.9rem;
+                            border: none;
+                            padding: 0.8rem 0;
+                            width: 35%;
+                            cursor: pointer;
+                            transition: $backgroundColorTransition;
+                            border-radius: 6px;
+
+                            &:hover {
+                                background-color: $defaultBlueHoverColor;
+                            }
+                        }
+                    }
+                    .next {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}

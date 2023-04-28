@@ -1,0 +1,17 @@
+@mixin alignItems($value) {
+    display: flex;
+    align-items: $value;
+}
+@mixin justifyContent($value) {
+    display: flex;
+    justify-content: $value;
+}
+@mixin flex-direction($value) {
+    display: flex;
+    flex-direction: $value;
+}
+@mixin alignJustifyCenter() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
