@@ -59,6 +59,7 @@
             padding: 3rem;
             @include flex-direction(column);
             justify-content: space-between;
+            gap: 10px 0;
 
             & h2 {
                 text-align: center;
@@ -88,13 +89,12 @@
                 @include justifyContent(space-between);
 
                 & button {
-                    width: 10%;
                     border: none;
                     background-color: $defaultBlueColor;
                     color: white;
                     font-size: 1.1rem;
                     font-weight: 600;
-                    padding: 0.7rem 0;
+                    padding: 0.7rem 5%;
                     cursor: pointer;
                     transition: $backgroundColorTransition;
                     &:hover {
@@ -188,11 +188,11 @@
                             color: white;
                             font-size: 0.9rem;
                             border: none;
-                            padding: 0.8rem 0;
-                            width: 35%;
+                            padding: 0.8rem 8%;
                             cursor: pointer;
                             transition: $backgroundColorTransition;
                             border-radius: 6px;
+                            white-space: nowrap;
 
                             &:hover {
                                 background-color: $defaultBlueHoverColor;
@@ -204,6 +204,32 @@
                         justify-content: flex-end;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .Home {
+        .feedback {
+            .feedbackContent {
+                width: 80%;
+            }
+            .submitContent {
+                .allInfo {
+                    gap: 2rem 3rem;
+                    .info {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+        .homeContainer {
+            .bgSection {
+                width: 0;
+            }
+            .mainContent {
+                width: 100dvw;
             }
         }
     }
